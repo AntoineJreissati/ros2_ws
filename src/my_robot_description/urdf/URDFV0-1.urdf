@@ -1,0 +1,285 @@
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="URDFV0-4-1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-2.71440215897557E-05 -1.29434809810815E-05 0.117910856735735"
+        rpy="0 0 0" />
+      <mass
+        value="3.06367142237613" />
+      <inertia
+        ixx="0.00533776301603364"
+        ixy="-8.54174275984332E-07"
+        ixz="6.90012158445505E-07"
+        iyy="0.00536658069830963"
+        iyz="-4.98154182879318E-07"
+        izz="0.00765524937802217" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/antoine/ros2_ws/src/my_robot_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/antoine/ros2_ws/src/my_robot_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="world">
+    <!-- This link is just a placeholder, no need to add visual or collision properties -->
+  </link>
+  <!-- Fixed joint connecting base_link to the world -->
+  <joint name="base_to_world" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="-2.27888879293776E-05 -0.000449047396182134 0.0194281729819824"
+        rpy="0 0 0" />
+      <mass
+        value="0.696833687701346" />
+      <inertia
+        ixx="0.00151263273670263"
+        ixy="1.90793988301823E-07"
+        ixz="1.29414027177392E-06"
+        iyy="0.00168611559326229"
+        iyz="-0.000137433674577634"
+        izz="0.00104370418850317" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/antoine/ros2_ws/src/my_robot_description/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.101960784313725 0.101960784313725 0.101960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/antoine/ros2_ws/src/my_robot_description/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="T0-1"
+    type="continuous">
+    <origin
+      xyz="0 0 0.2515"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="25"
+      velocity="13" />
+  </joint>
+  <link
+    name="Link2">
+    <inertial>
+      <origin
+        xyz="-0.0424032625988052 2.32820180541223E-07 0.272545245742367"
+        rpy="0 0 0" />
+      <mass
+        value="1.00545030505479" />
+      <inertia
+        ixx="0.00364321316204073"
+        ixy="2.47544468309759E-09"
+        ixz="-9.03118309182752E-05"
+        iyy="0.00354907397708228"
+        iyz="1.04635786102536E-08"
+        izz="0.000739442983488456" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/antoine/ros2_ws/src/my_robot_description/meshes/Link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.101960784313725 0.101960784313725 0.101960784313725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/antoine/ros2_ws/src/my_robot_description/meshes/Link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="T1-2"
+    type="revolute">
+    <origin
+      xyz="0 0.0394999999999991 0.062"
+      rpy="0 0 1.5707963267949" />
+    <parent
+      link="link1" />
+    <child
+      link="Link2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.9548"
+      upper="1.9548"
+      effort="100"
+      velocity="13" />
+  </joint>
+  <link
+    name="Link3">
+    <inertial>
+      <origin
+        xyz="0.0247909098284504 2.17958004866681E-07 0.189881253509946"
+        rpy="0 0 0" />
+      <mass
+        value="0.982688004234941" />
+      <inertia
+        ixx="0.00204930091487165"
+        ixy="1.67175493025433E-09"
+        ixz="-8.26056377814485E-05"
+        iyy="0.00187374198537278"
+        iyz="9.74561048197551E-09"
+        izz="0.00061207635773845" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/antoine/ros2_ws/src/my_robot_description/meshes/Link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.917647058823529 0.929411764705882 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/antoine/ros2_ws/src/my_robot_description/meshes/Link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="T2-3"
+    type="revolute">
+    <origin
+      xyz="-0.1265 0 0.41887"
+      rpy="1.5708 0 0" />
+    <parent
+      link="Link2" />
+    <child
+      link="Link3" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-4.2935"
+      upper="1.2"
+      effort="60"
+      velocity="13" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="0.0415518910871551 7.85976921804932E-05 0.0579101067127266"
+        rpy="0 0 0" />
+      <mass
+        value="0.1946923090723" />
+      <inertia
+        ixx="0.000287325513470273"
+        ixy="8.05059543211252E-10"
+        ixz="-4.01634098254397E-06"
+        iyy="0.000382857543273904"
+        iyz="8.15467144911952E-10"
+        izz="0.000161059204494533" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/antoine/ros2_ws/src/my_robot_description/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.694117647058824 0.0980392156862745 0.0980392156862745 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="/home/antoine/ros2_ws/src/my_robot_description/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="T3-4"
+    type="revolute">
+    <origin
+      xyz="-0.0194999999999977 2.27571903270718E-05 0.311921502055369"
+      rpy="1.57079632679489 0 0" />
+    <parent
+      link="Link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.6652"
+      upper="0.5236"
+      effort="25"
+      velocity="13" />
+  </joint>
+</robot>
